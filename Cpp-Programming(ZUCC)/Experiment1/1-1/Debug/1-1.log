@@ -1,0 +1,8 @@
+﻿C:\Program Files (x86)\MSBuild\Microsoft.Cpp\v4.0\V140\Microsoft.CppBuild.targets(392,5): warning MSB8028: The intermediate directory (Debug\) contains files shared from another project (1-1.vcxproj).  This can lead to incorrect clean and rebuild behavior.
+  1-4cpp
+g:\大学课程\c++程序设计和上机\课堂实验\experiment1\1-1\1-4cpp(34): error C2248: “rectangle::rectangle”: 无法访问 private 成员(在“rectangle”类中声明)
+  g:\大学课程\c++程序设计和上机\课堂实验\experiment1\1-1\1-4cpp(11): note: 参见“rectangle::rectangle”的声明
+  g:\大学课程\c++程序设计和上机\课堂实验\experiment1\1-1\1-4cpp(8): note: 参见“rectangle”的声明
+  正在生成代码...
+  正在跳过...(未检测到相关更改)
+  stdafx.cpp
