@@ -1,5 +1,8 @@
 #pragma once
 
+// CppProgrammingTask
+// Author: takuron@github.com
+
 #include "stdafx.h"
 
 class FactorialSum

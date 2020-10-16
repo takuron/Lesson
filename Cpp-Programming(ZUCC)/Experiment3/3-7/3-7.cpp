@@ -1,4 +1,6 @@
 // 3-7.cpp : 定义控制台应用程序的入口点。
+// CppProgrammingTask
+// Author: takuron@github.com
 //
 
 #include "stdafx.h"
