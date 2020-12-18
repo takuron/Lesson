@@ -35,5 +35,11 @@ void mainMenu() {
 }
 
 void openFile() {
-
+	ifstream input;
+	string files;
+	cout << "请输入文件名称";
+	cin >> files;
+	input.open(files, ios::in);
+	cout << input.get();
+	input.close();
 }
