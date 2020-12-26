@@ -2,10 +2,20 @@
 //
 
 #include "ConfigWritter.h"
+#include "ConfItems.h"
+
+void test() {
+	string key;
+	cin >> key;
+	string strs[5] = { "tese","syd","shjd","sheh","sjjde" };
+	ConfStringArrayItem cfs(key,strs,5);
+	cout << cfs.getLine();
+}
 
 int main()
 {
-	mainMenu();
+	/*mainMenu();*/
+	test();
     return 0;
 }
 

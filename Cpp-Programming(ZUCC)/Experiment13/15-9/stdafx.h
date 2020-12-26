@@ -6,11 +6,9 @@
 #pragma once
 
 #include <iostream>
-#include<iomanip>
-#include<fstream>
+#include <cmath>
 #include <string>
-#include <array>
-#include <vector>
+
 
 using namespace std;
 

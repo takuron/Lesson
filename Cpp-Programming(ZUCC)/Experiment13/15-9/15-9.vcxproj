@@ -19,9 +19,9 @@
     </ProjectConfiguration>
   </ItemGroup>
   <PropertyGroup Label="Globals">
-    <ProjectGuid>{FC420298-A3DD-4406-8728-B38324BF5C99}</ProjectGuid>
+    <ProjectGuid>{2D929F36-A073-4D70-856D-5A6591FEB6F8}</ProjectGuid>
     <Keyword>Win32Proj</Keyword>
-    <RootNamespace>ConfigWritter</RootNamespace>
+    <RootNamespace>My159</RootNamespace>
     <WindowsTargetPlatformVersion>8.1</WindowsTargetPlatformVersion>
   </PropertyGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.Default.props" />
@@ -145,17 +145,10 @@
     <Text Include="ReadMe.txt" />
   </ItemGroup>
   <ItemGroup>
-    <ClInclude Include="ConfFiles.h" />
-    <ClInclude Include="ConfigWritter.h" />
-    <ClInclude Include="ConfItems.h" />
-    <ClInclude Include="ConfSections.h" />
     <ClInclude Include="stdafx.h" />
   </ItemGroup>
   <ItemGroup>
-    <ClCompile Include="ConfFiles.cpp" />
-    <ClCompile Include="ConfigWritter.cpp" />
-    <ClCompile Include="ConfItems.cpp" />
-    <ClCompile Include="ConfSections.cpp" />
+    <ClCompile Include="15-9.cpp" />
     <ClCompile Include="stdafx.cpp" />
   </ItemGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />

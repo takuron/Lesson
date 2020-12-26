@@ -21,33 +21,12 @@
     <ClInclude Include="stdafx.h">
       <Filter>头文件</Filter>
     </ClInclude>
-    <ClInclude Include="ConfigWritter.h">
-      <Filter>头文件</Filter>
-    </ClInclude>
-    <ClInclude Include="ConfFiles.h">
-      <Filter>头文件</Filter>
-    </ClInclude>
-    <ClInclude Include="ConfSections.h">
-      <Filter>头文件</Filter>
-    </ClInclude>
-    <ClInclude Include="ConfItems.h">
-      <Filter>头文件</Filter>
-    </ClInclude>
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="stdafx.cpp">
       <Filter>源文件</Filter>
     </ClCompile>
-    <ClCompile Include="ConfigWritter.cpp">
-      <Filter>源文件</Filter>
-    </ClCompile>
-    <ClCompile Include="ConfFiles.cpp">
-      <Filter>源文件</Filter>
-    </ClCompile>
-    <ClCompile Include="ConfSections.cpp">
-      <Filter>源文件</Filter>
-    </ClCompile>
-    <ClCompile Include="ConfItems.cpp">
+    <ClCompile Include="15-9-2.cpp">
       <Filter>源文件</Filter>
     </ClCompile>
   </ItemGroup>
