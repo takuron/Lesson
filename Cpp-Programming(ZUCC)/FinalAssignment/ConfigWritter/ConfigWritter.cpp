@@ -9,7 +9,7 @@ void test() {
 	cin >> key;
 	string strs[5] = { "tese","syd","shjd","sheh","sjjde" };
 	ConfStringArrayItem cfs(key,strs,5);
-	cout << cfs.getLine();
+	cout << Item2String(cfs);
 }
 
 int main()

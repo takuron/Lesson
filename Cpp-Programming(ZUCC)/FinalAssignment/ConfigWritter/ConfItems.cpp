@@ -141,3 +141,8 @@ string ConfStringArrayItem::getLine()
 	return key + " = " + arrayout;
 }
 
+
+template<typename T>
+string Item2String(ConfItem<T> conf) {
+	return conf.key + " " + conf.type() + " " + to_string(conf.value);
+}

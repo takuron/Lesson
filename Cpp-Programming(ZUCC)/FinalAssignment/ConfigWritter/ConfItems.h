@@ -128,7 +128,4 @@ private:
 
 };
 
-template<typename T>
-string Item2String(ConfItem<T> conf) {
-	return conf.key + " " + to_string(conf.value);
-}
+
