@@ -13,9 +13,11 @@ public:
 
 	void setConf(string path, int type);
 	void save();
+	void read();
 
 	void addSection(ConfSection section);
 	void changeSection(ConfSection section,int i);
+	void removeSection(int i);
 
 	vector<ConfSection> getSectionList();
 	ConfSection getSection(int i);
@@ -28,4 +30,15 @@ public:
 private:
 	string path;
 	vector<ConfSection> sections;
+};
+
+class  FileError
+{
+public:
+	 FileError(string msg);
+
+	 string getError();
+
+private:
+	string message;
 };

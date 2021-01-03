@@ -5,40 +5,40 @@ ConfSection::ConfSection(string k)
 	key = k;
 }
 
-ConfSection::ConfSection(string k, string sv)
-{
-	key = k;
-	string sVals = sv;
-
-	int index = sVals.find_first_of('\n');
-	int size = sVals.size();
-
-	while (index<size)
-	{
-		string item(sVals.c_str(), index);
-
-		//去除注释 
-		if (item.find_first_of('#')) {
-			string cpItem(item.c_str(), item.find_first_of('#'));
-			item = cpItem;
-		}
-		else
-		{
-
-		}
-
-		//判断合法行
-
-		if (item.find_first_of('=') != 0 && item.find_first_of('=') < item.size()) {
-			cout << item << endl;
-		}
-
-
-		sVals.erase(0, index);
-		index = sVals.find_first_of('\n');
-		size = sVals.size();
-	}
-}
+//ConfSection::ConfSection(string k, string sv)
+//{
+//	key = k;
+//	string sVals = sv;
+//
+//	int index = sVals.find_first_of('\n');
+//	int size = sVals.size();
+//
+//	while (index<size)
+//	{
+//		string item(sVals.c_str(), index);
+//
+//		//去除注释 
+//		if (item.find_first_of('#')) {
+//			string cpItem(item.c_str(), item.find_first_of('#'));
+//			item = cpItem;
+//		}
+//		else
+//		{
+//
+//		}
+//
+//		//判断合法行
+//
+//		if (item.find_first_of('=') != 0 && item.find_first_of('=') < item.size()) {
+//			cout << item << endl;
+//		}
+//
+//
+//		sVals.erase(0, index);
+//		index = sVals.find_first_of('\n');
+//		size = sVals.size();
+//	}
+//}
 
 string ConfSection::getKey()
 {
@@ -48,6 +48,11 @@ string ConfSection::getKey()
 int ConfSection::getSectionSize()
 {
 	return vals.size();
+}
+
+void ConfSection::setSectionName(string name)
+{
+	key = name;
 }
 
 vector<ConfItem> ConfSection::getConfItemList()

@@ -7,6 +7,7 @@ extern ConfFile mFile("test",1);
 
 void mainMenu();
 void newFile();
+void openFile();
 void editMenu();
 void addSection();
 void editSection(int i);

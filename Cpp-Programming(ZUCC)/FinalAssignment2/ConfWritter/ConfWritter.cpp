@@ -21,6 +21,7 @@ void mainMenu() {
 	switch (cmd)
 	{
 	case 1:
+		openFile();
 		break;
 	case 2:
 		newFile();
@@ -39,10 +40,33 @@ void newFile()
 	cout << "请输入文件名和存储路径：" << endl;
 	cin >> path;
 
-	mFile.setConf(path, ConfFile::TYPE_WRITE);
+	mFile.setConf(path,ConfFile::TYPE_WRITE);
 
 	ConfSection newConfSection("_default");
 	mFile.addSection(newConfSection);
+
+	editMenu();
+}
+
+void openFile()
+{
+	string path;
+	cout << "请输入文件名和存储路径：" << endl;
+	cin >> path;
+
+	mFile.setConf(path, ConfFile::TYPE_READ);
+
+
+	//文件错误处理
+	try
+	{
+		mFile.read();
+	}
+	catch (FileError error)
+	{
+		cout << error.getError() << endl;
+		mainMenu();
+	}
 
 	editMenu();
 }
@@ -101,6 +125,9 @@ void editSection(int i) {
 	cout << "节名称：" << mSection.getKey() << endl;
 	cout << "———选择需要执行的操作————" << endl;
 	cout << "1.新建项" << endl;
+	cout << "2.新建数组项" << endl;
+	cout << "3.修改节名称" << endl;
+	cout << "4.删除节" << endl;
 
 	if (mSection.getSectionSize() > 0) {
 		cout << "————————————————" << endl;
@@ -109,7 +136,7 @@ void editSection(int i) {
 		vector<ConfItem> mIlist = mSection.getConfItemList();
 
 		for (i = 0; i < mSection.getSectionSize(); i++) {
-			cout << i + 11 << ".修改项：" << mIlist[i].getKey() << endl;
+			cout << i + 11 << ".修改项：" << mIlist[i].toString() << endl;
 		}
 	}
 
@@ -124,6 +151,29 @@ void editSection(int i) {
 	}
 	else if (cmd == 1) {
 		addItem(i);
+	}
+	else if (cmd == 3) {
+		string name;
+		cout << "输入新的节名称：" << endl;
+		cin >> name;
+		mSection.setSectionName(name);
+		mFile.changeSection(mSection, i);
+
+		editSection(i);
+	}
+	else if (cmd == 4) {
+		char cmd;
+		cout << "确定删除吗？输入Y确定：" ;
+		cin >> cmd;
+		if (cmd == 'Y') {
+			mFile.removeSection(i);
+			editMenu();
+		}
+		else
+		{
+			editSection(i);
+		}
+
 	}
 	else if (cmd > 10&&cmd<=10+mSection.getSectionSize()) {
 		editItem(cmd - 11, i);

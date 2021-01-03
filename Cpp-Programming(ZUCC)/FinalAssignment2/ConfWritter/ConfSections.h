@@ -7,10 +7,11 @@ class ConfSection
 {
 public:
 	ConfSection(string key);
-	ConfSection(string key, string sVals);
 
 	string getKey();
 	int getSectionSize(); 
+
+	void setSectionName(string name);
 	
 	vector<ConfItem> getConfItemList();
 	ConfItem getConfItem(int i);
