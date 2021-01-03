@@ -9,9 +9,9 @@ public:
 	ConfSection(string key);
 
 	string getKey();
-	int getSectionSize(); 
+	int getItemsSize(); 
 
-	void setSectionName(string name);
+	void setSectionKey(string name);
 	
 	vector<ConfItem> getConfItemList();
 	ConfItem getConfItem(int i);
@@ -19,6 +19,10 @@ public:
 	void addItem(ConfItem mItem);
 	void changeItem(int i,ConfItem mItem);
 	void deleteItem(int i);
+
+	//‘ÀÀ„∑˚÷ÿ‘ÿ
+
+	int operator+(ConfItem mItem);
 
 	ConfSection(const ConfSection& mSection);
 

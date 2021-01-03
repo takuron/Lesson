@@ -45,12 +45,12 @@ string ConfSection::getKey()
 	return string(key);
 }
 
-int ConfSection::getSectionSize()
+int ConfSection::getItemsSize()
 {
 	return vals.size();
 }
 
-void ConfSection::setSectionName(string name)
+void ConfSection::setSectionKey(string name)
 {
 	key = name;
 }
@@ -78,6 +78,12 @@ void ConfSection::changeItem(int i, ConfItem mItem)
 void ConfSection::deleteItem(int i)
 {
 	vals.erase(begin(vals) + i);
+}
+
+int ConfSection::operator+(ConfItem mItem)
+{
+	addItem(mItem);
+	return getItemsSize();
 }
 
 ConfSection::ConfSection(const ConfSection & mSection)

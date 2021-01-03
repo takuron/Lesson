@@ -57,7 +57,7 @@ void openFile()
 	mFile.setConf(path, ConfFile::TYPE_READ);
 
 
-	//文件错误处理
+	//文件打开异常处理
 	try
 	{
 		mFile.read();
@@ -76,6 +76,7 @@ void editMenu()
 	cout << "文件名：" << mFile.getPath() << endl;
 	cout << "———选择需要执行的操作————" << endl;
 	cout << "1.新建节" << endl;
+	cout << "2.设置自定义注释" << endl;
 
 	if (mFile.getSectionsSzie() > 0) {
 		cout << "————————————————" << endl;
@@ -100,7 +101,15 @@ void editMenu()
 	else if (cmd == 1) {
 		addSection();
 	}
-	else if (cmd > 10) {
+	else if (cmd == 2) {
+		string comment;
+		cout << "输入自定义注释：" << endl;
+		cin >> comment;
+		mFile.setComment(comment);
+
+		editMenu();
+	}
+	else if (cmd > 10&&cmd<=10+mFile.getSectionsSzie()) {
 		editSection(cmd - 11);
 	}
 	else {
@@ -129,13 +138,13 @@ void editSection(int i) {
 	cout << "3.修改节名称" << endl;
 	cout << "4.删除节" << endl;
 
-	if (mSection.getSectionSize() > 0) {
+	if (mSection.getItemsSize() > 0) {
 		cout << "————————————————" << endl;
 
 		int i;
 		vector<ConfItem> mIlist = mSection.getConfItemList();
 
-		for (i = 0; i < mSection.getSectionSize(); i++) {
+		for (i = 0; i < mSection.getItemsSize(); i++) {
 			cout << i + 11 << ".修改项：" << mIlist[i].toString() << endl;
 		}
 	}
@@ -152,11 +161,14 @@ void editSection(int i) {
 	else if (cmd == 1) {
 		addItem(i);
 	}
+	else if (cmd == 2) {
+		addArrayItem(i);
+	}
 	else if (cmd == 3) {
 		string name;
 		cout << "输入新的节名称：" << endl;
 		cin >> name;
-		mSection.setSectionName(name);
+		mSection.setSectionKey(name);
 		mFile.changeSection(mSection, i);
 
 		editSection(i);
@@ -175,7 +187,7 @@ void editSection(int i) {
 		}
 
 	}
-	else if (cmd > 10&&cmd<=10+mSection.getSectionSize()) {
+	else if (cmd > 10&&cmd<=10+mSection.getItemsSize()) {
 		editItem(cmd - 11, i);
 	}
 	else {
@@ -193,7 +205,45 @@ void addItem(int i)
 	cout << "请输入值：";
 	cin >> itemVal;
 	ConfItem mItem(itemName,itemVal);
-	mSection.addItem(mItem);
+
+	mSection + mItem;
+	//此处使用运算符重载，用+实现添加项的功能
+	//mSection.addItem(mItem);
+
+	mFile.changeSection(mSection, i);
+
+	editSection(i);
+}
+
+void addArrayItem(int i)
+{
+	string itemName;
+	ConfSection mSection = mFile.getSection(i);
+	cout << "请输入项名称：";
+	cin >> itemName;
+
+	//这是一个同时继承与ConfItem和Myarray类的类，其中Myarray类为抽象类
+	ConfArrayItem arrayItem(itemName);
+	int flag = 1;
+
+	while (flag) {
+		string item;
+		cout << "请输入数组中一个项目的值：";
+		cin >> item;
+		arrayItem.add(item);
+		cout << "是否结束输入？输入Y结束，输入其他字符继续：";
+		char cmd;
+		cin >> cmd;
+		if (cmd == 'Y') {
+			flag = 0;
+		}
+	}
+
+	ConfItem nItem = toNormalItem(arrayItem);
+
+	mSection + nItem;
+	//此处使用运算符重载，用+实现添加项的功能
+	//mSection.addItem(mItem);
 
 	mFile.changeSection(mSection, i);
 

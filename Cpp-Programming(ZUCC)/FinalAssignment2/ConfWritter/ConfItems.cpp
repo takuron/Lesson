@@ -34,5 +34,38 @@ string ConfItem::getKey()
 
 string ConfItem::toString()
 {
-	return string(key+" = "+val+"\n");
+	return string(key+" = "+val);
+}
+
+ConfArrayItem::ConfArrayItem(string k):ConfItem(k)
+{
+
+}
+
+void ConfArrayItem::add(string item)
+{
+	items.push_back(item);
+}
+
+string ConfArrayItem::toString()
+{
+	change2val();
+	
+	return string(key + " = " + val);
+}
+
+void ConfArrayItem::change2val()
+{
+	int i;
+	for (i = 0; i < items.size(); i++) {
+		val = val + items[i];
+		if (i != items.size() - 1) val = val + ",";
+	}
+	val = "[" + val + "]";
+}
+
+ConfItem toNormalItem(ConfArrayItem mArrayItem)
+{
+	mArrayItem.change2val();
+	return ConfItem(mArrayItem.key,mArrayItem.val);
 }
