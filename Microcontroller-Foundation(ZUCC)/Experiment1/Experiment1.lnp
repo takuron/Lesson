@@ -1,0 +1,4 @@
+"STARTUP.obj",
+"es.obj" 
+TO "Experiment1" 
+RAMSIZE(256) 
