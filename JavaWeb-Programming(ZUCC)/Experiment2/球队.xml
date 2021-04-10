@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<!DOCTYPE 球队 [
+<!ELEMENT 球队 (Madrid,Lakers)>
+<!ATTLIST Madrid type CDATA "">
+<!ELEMENT Madrid (球员+)>
+<!ATTLIST Lakers type CDATA "">
+<!ELEMENT Lakers (球员+)>
+<!ELEMENT 球员 (#PCDATA)>
+]>
+
+<球队>
+<!--type中篮球队为basketball，足球队为football-->
+    <Madrid type="basketball">
+        <球员>Ronaldo</球员>
+        <球员>Casillas</球员>
+        <球员>Ramos</球员>
+        <球员>Modric</球员>
+        <球员>Benzema</球员>
+    </Madrid>
+    <Lakers type="football">
+        <球员>Oneal</球员>
+        <球员>Bryant</球员>
+    </Lakers>
+</球队>

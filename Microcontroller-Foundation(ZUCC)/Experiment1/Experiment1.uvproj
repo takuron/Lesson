@@ -347,14 +347,9 @@
           <GroupName>Source Group 1</GroupName>
           <Files>
             <File>
-              <FileName>STARTUP.A51</FileName>
-              <FileType>2</FileType>
-              <FilePath>.\STARTUP.A51</FilePath>
-            </File>
-            <File>
-              <FileName>es.asm</FileName>
-              <FileType>2</FileType>
-              <FilePath>.\es.asm</FilePath>
+              <FileName>Experiment1.c</FileName>
+              <FileType>1</FileType>
+              <FilePath>.\Experiment1.c</FilePath>
             </File>
           </Files>
         </Group>

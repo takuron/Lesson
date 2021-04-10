@@ -1,4 +1,3 @@
-"STARTUP.obj",
-"es.obj" 
+"Experiment1.obj" 
 TO "Experiment1" 
 RAMSIZE(256) 

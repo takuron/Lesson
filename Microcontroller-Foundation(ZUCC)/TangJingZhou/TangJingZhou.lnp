@@ -1,0 +1,4 @@
+"STARTUP.obj",
+"TangJingZhou.obj" 
+TO "TangJingZhou" 
+RAMSIZE(256) 

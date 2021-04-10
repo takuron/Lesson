@@ -43,7 +43,7 @@
             <InvalidFlash>1</InvalidFlash>
           </TargetStatus>
           <OutputDirectory>.\</OutputDirectory>
-          <OutputName>Experiment1</OutputName>
+          <OutputName>TangJingZhou</OutputName>
           <CreateExecutable>1</CreateExecutable>
           <CreateLib>0</CreateLib>
           <CreateHexFile>1</CreateHexFile>
@@ -352,9 +352,9 @@
               <FilePath>.\STARTUP.A51</FilePath>
             </File>
             <File>
-              <FileName>Experiment1.c</FileName>
+              <FileName>TangJingZhou.c</FileName>
               <FileType>1</FileType>
-              <FilePath>.\Experiment1.c</FilePath>
+              <FilePath>.\TangJingZhou.c</FilePath>
             </File>
           </Files>
         </Group>
