@@ -1,0 +1,113 @@
+BL51 BANKED LINKER/LOCATER V6.22                                                        04/28/2021  16:33:34  PAGE 1
+
+
+BL51 BANKED LINKER/LOCATER V6.22, INVOKED BY:
+D:\KEIL\C51\BIN\BL51.EXE Experiment6.obj TO Experiment6
+
+
+MEMORY MODEL: SMALL
+
+
+INPUT MODULES INCLUDED:
+  Experiment6.obj (EXPERIMENT6)
+  D:\KEIL\C51\LIB\C51S.LIB (?C_STARTUP)
+  D:\KEIL\C51\LIB\C51S.LIB (?C_INIT)
+
+
+LINK MAP OF MODULE:  Experiment6 (EXPERIMENT6)
+
+
+            TYPE    BASE      LENGTH    RELOCATION   SEGMENT NAME
+            -----------------------------------------------------
+
+            * * * * * * *   D A T A   M E M O R Y   * * * * * * *
+            REG     0000H     0008H     ABSOLUTE     "REG BANK 0"
+            DATA    0008H     000AH     UNIT         ?DT?EXPERIMENT6
+            IDATA   0012H     0001H     UNIT         ?STACK
+
+            * * * * * * *   C O D E   M E M O R Y   * * * * * * *
+            CODE    0000H     0003H     ABSOLUTE     
+                    0003H     07FDH                  *** GAP ***
+            CODE    0800H     008CH     UNIT         ?C_C51STARTUP
+            CODE    088CH     0029H     UNIT         ?PR?MAIN?EXPERIMENT6
+            CODE    08B5H     0026H     UNIT         ?PR?_DELAY?EXPERIMENT6
+            CODE    08DBH     000DH     UNIT         ?C_INITSEG
+
+
+
+OVERLAY MAP OF MODULE:   Experiment6 (EXPERIMENT6)
+
+
+SEGMENT
+  +--> CALLED SEGMENT
+---------------------
+?C_C51STARTUP
+  +--> ?PR?MAIN?EXPERIMENT6
+  +--> ?C_INITSEG
+
+?PR?MAIN?EXPERIMENT6
+  +--> ?PR?_DELAY?EXPERIMENT6
+
+
+
+SYMBOL TABLE OF MODULE:  Experiment6 (EXPERIMENT6)
+
+  VALUE           TYPE          NAME
+  ----------------------------------
+
+  -------         MODULE        EXPERIMENT6
+  C:0000H         SYMBOL        _ICE_DUMMY_
+  D:0080H         PUBLIC        P0
+  D:0090H         PUBLIC        P1
+BL51 BANKED LINKER/LOCATER V6.22                                                      04/28/2021  16:33:34  PAGE 2
+
+
+  D:00B0H         PUBLIC        P3
+  D:00A8H         PUBLIC        IE
+  C:08B5H         PUBLIC        _delay
+  D:00B8H         PUBLIC        IP
+  C:088CH         PUBLIC        main
+  D:0098H         PUBLIC        SCON
+  D:0088H         PUBLIC        TCON
+  D:0008H         PUBLIC        LEDnumber
+  D:00C8H         PUBLIC        T2CON
+  D:00D0H         PUBLIC        PSW
+  -------         PROC          _DELAY
+  D:0006H         SYMBOL        n
+  -------         DO            
+  D:0004H         SYMBOL        i
+  D:0002H         SYMBOL        j
+  -------         ENDDO         
+  C:08B5H         LINE#         8
+  C:08B5H         LINE#         10
+  C:08B8H         LINE#         11
+  C:08B8H         LINE#         12
+  C:08C8H         LINE#         13
+  C:08C8H         LINE#         15
+  C:08CFH         LINE#         16
+  C:08DAH         LINE#         18
+  -------         ENDPROC       _DELAY
+  -------         PROC          MAIN
+  -------         DO            
+  D:0001H         SYMBOL        LED
+  D:0082H         SYMBOL        i
+  -------         ENDDO         
+  C:088CH         LINE#         20
+  C:088CH         LINE#         21
+  C:088DH         LINE#         22
+  C:0891H         LINE#         23
+  C:0891H         LINE#         24
+  C:0899H         LINE#         25
+  C:089BH         LINE#         26
+  C:08A2H         LINE#         28
+  C:08A3H         LINE#         29
+  C:08B3H         LINE#         30
+  -------         ENDPROC       MAIN
+  -------         ENDMOD        EXPERIMENT6
+
+******************************************************************************
+* RESTRICTED VERSION WITH 0800H BYTE CODE SIZE LIMIT; USED: 005BH BYTE ( 4%) *
+******************************************************************************
+
+Program Size: data=19.0 xdata=0 code=235
+LINK/LOCATE RUN COMPLETE.  0 WARNING(S),  0 ERROR(S)

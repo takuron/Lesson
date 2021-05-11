@@ -3,12 +3,15 @@
 #define uchar unsigned char
 #define uint unsigned int
 
-void delay500ms(){
-
-	unsigned char i,j,k;
-	for(i=15;i>0;i--)
-	for(j=202;j>0;j--)
-	for(k=81;k>0;k--);
+void delay(){
+	int i,j;
+	for(i = 0; i<110;++i)
+		{
+			for(j = 0; j<1000;++j)
+				{
+      				;
+				}
+		}
 
 }
 
@@ -24,7 +27,7 @@ void main(){
 			count = 0;
 		}
 		P1 = p1s;
-		delay500ms();
+		delay();
 
 		p1s <<= 1;
 		p1s ++;
