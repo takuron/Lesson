@@ -1,0 +1,138 @@
+BL51 BANKED LINKER/LOCATER V6.22                                                        06/09/2021  16:49:42  PAGE 1
+
+
+BL51 BANKED LINKER/LOCATER V6.22, INVOKED BY:
+D:\KEIL\C51\BIN\BL51.EXE Experiment4.obj TO Experiment4 RAMSIZE (256)
+
+
+MEMORY MODEL: SMALL
+
+
+INPUT MODULES INCLUDED:
+  Experiment4.obj (EXPERIMENT4)
+  D:\KEIL\C51\LIB\C51S.LIB (?C_STARTUP)
+  D:\KEIL\C51\LIB\C51S.LIB (?C_INIT)
+
+
+LINK MAP OF MODULE:  Experiment4 (EXPERIMENT4)
+
+
+            TYPE    BASE      LENGTH    RELOCATION   SEGMENT NAME
+            -----------------------------------------------------
+
+            * * * * * * *   D A T A   M E M O R Y   * * * * * * *
+            REG     0000H     0008H     ABSOLUTE     "REG BANK 0"
+            DATA    0008H     0004H     UNIT         _DATA_GROUP_
+            DATA    000CH     0002H     UNIT         ?DT?EXPERIMENT4
+            IDATA   000EH     0001H     UNIT         ?STACK
+
+            * * * * * * *   C O D E   M E M O R Y   * * * * * * *
+            CODE    0000H     0003H     ABSOLUTE     
+            CODE    0003H     0003H     ABSOLUTE     
+                    0006H     07FAH                  *** GAP ***
+            CODE    0800H     008CH     UNIT         ?C_C51STARTUP
+            CODE    088CH     003EH     UNIT         ?PR?MAIN?EXPERIMENT4
+            CODE    08CAH     001DH     UNIT         ?PR?DELAY?EXPERIMENT4
+            CODE    08E7H     000BH     UNIT         ?PR?CLICK?EXPERIMENT4
+            CODE    08F2H     0005H     UNIT         ?C_INITSEG
+
+
+
+OVERLAY MAP OF MODULE:   Experiment4 (EXPERIMENT4)
+
+
+SEGMENT                          DATA_GROUP 
+  +--> CALLED SEGMENT          START    LENGTH
+----------------------------------------------
+?C_C51STARTUP                  -----    -----
+  +--> ?PR?MAIN?EXPERIMENT4
+  +--> ?C_INITSEG
+
+?PR?MAIN?EXPERIMENT4           0008H    0004H
+  +--> ?PR?DELAY?EXPERIMENT4
+
+
+
+SYMBOL TABLE OF MODULE:  Experiment4 (EXPERIMENT4)
+
+  VALUE           TYPE          NAME
+  ----------------------------------
+
+  -------         MODULE        EXPERIMENT4
+BL51 BANKED LINKER/LOCATER V6.22                                                      06/09/2021  16:49:42  PAGE 2
+
+
+  C:0000H         SYMBOL        _ICE_DUMMY_
+  D:0090H         PUBLIC        P1
+  D:00B0H         PUBLIC        P3
+  B:00A8H.7       PUBLIC        EA
+  C:08E7H         PUBLIC        click
+  D:00A8H         PUBLIC        IE
+  C:08CAH         PUBLIC        delay
+  D:00B8H         PUBLIC        IP
+  C:088CH         PUBLIC        main
+  D:0098H         PUBLIC        SCON
+  D:0088H         PUBLIC        TCON
+  D:000CH         PUBLIC        isClick
+  B:00A8H.0       PUBLIC        EX0
+  B:0088H.0       PUBLIC        IT0
+  D:00C8H         PUBLIC        T2CON
+  D:00D0H         PUBLIC        PSW
+  -------         PROC          DELAY
+  -------         DO            
+  D:0006H         SYMBOL        i
+  D:0004H         SYMBOL        j
+  -------         ENDDO         
+  C:08CAH         LINE#         8
+  C:08CAH         LINE#         10
+  C:08CDH         LINE#         11
+  C:08CDH         LINE#         12
+  C:08D0H         LINE#         13
+  C:08D0H         LINE#         15
+  C:08DBH         LINE#         16
+  C:08E6H         LINE#         18
+  -------         ENDPROC       DELAY
+  -------         PROC          MAIN
+  -------         DO            
+  D:0008H         SYMBOL        nu
+  D:0009H         SYMBOL        count
+  D:000BH         SYMBOL        p1s
+  -------         ENDDO         
+  C:088CH         LINE#         20
+  C:088CH         LINE#         21
+  C:088EH         LINE#         22
+  C:0890H         LINE#         23
+  C:0892H         LINE#         24
+  C:0892H         LINE#         25
+  C:089AH         LINE#         27
+  C:089EH         LINE#         28
+  C:08A1H         LINE#         29
+  C:08A4H         LINE#         31
+  C:08A4H         LINE#         32
+  C:08A7H         LINE#         33
+  C:08AAH         LINE#         35
+  C:08B0H         LINE#         36
+  C:08B2H         LINE#         37
+  C:08BAH         LINE#         39
+  C:08C3H         LINE#         41
+  C:08C8H         LINE#         42
+  C:08C8H         LINE#         43
+  -------         ENDPROC       MAIN
+  -------         PROC          CLICK
+BL51 BANKED LINKER/LOCATER V6.22                                                      06/09/2021  16:49:42  PAGE 3
+
+
+  C:08E7H         LINE#         46
+  C:08E7H         LINE#         47
+  C:08E9H         LINE#         48
+  C:08EFH         LINE#         49
+  C:08F1H         LINE#         50
+  -------         ENDPROC       CLICK
+  -------         ENDMOD        EXPERIMENT4
+
+******************************************************************************
+* RESTRICTED VERSION WITH 0800H BYTE CODE SIZE LIMIT; USED: 006DH BYTE ( 5%) *
+******************************************************************************
+
+Program Size: data=15.0 xdata=0 code=253
+LINK/LOCATE RUN COMPLETE.  0 WARNING(S),  0 ERROR(S)

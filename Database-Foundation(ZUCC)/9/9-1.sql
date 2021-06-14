@@ -1,0 +1,45 @@
+DROP DATABASE  IF EXISTS student_score;
+CREATE DATABASE student_score DEFAULT CHARSET utf8 COLLATE utf8_general_ci;
+USE student_score;
+
+CREATE TABLE student (
+student_id VARCHAR(10) PRIMARY KEY,
+student_name VARCHAR(20) NOT NULL,
+student_sex ENUM('男','女') DEFAULT '男' NOT NULL
+);
+
+INSERT INTO student VALUES("2014013601","陈明",'男');
+INSERT INTO student VALUES("2014013602","靳晓晨",'女');
+INSERT INTO student VALUES("2014013603","李宁",'女');
+INSERT INTO student VALUES("2014013604","杨浩宁",'男');
+
+CREATE TABLE course(
+course_id VARCHAR(4) PRIMARY KEY,
+course_name VARCHAR(30) NOT NULL,
+course_credit TINYINT NOT NULL
+);
+
+INSERT INTO course VALUES("0001","离散数学",3);
+INSERT INTO course VALUES("0002","数据结构",4);
+INSERT INTO course VALUES("0003","计算机组成原理",4);
+
+CREATE TABLE score(
+student_id VARCHAR(10) NOT NULL,
+course_id VARCHAR(4) NOT NULL,
+score TINYINT NOT NULL,
+PRIMARY KEY(student_id,course_id,score),
+FOREIGN KEY (student_id) REFERENCES student(student_id) ON DELETE CASCADE ON UPDATE CASCADE,
+FOREIGN KEY (course_id) REFERENCES course(course_id) ON DELETE CASCADE ON UPDATE CASCADE
+);
+
+INSERT INTO score VALUES("2014013601","0001",87);
+INSERT INTO score VALUES("2014013601","0002",83);
+INSERT INTO score VALUES("2014013602","0001",80);
+INSERT INTO score VALUES("2014013602","0002",79);
+INSERT INTO score VALUES("2014013602","0003",95);
+INSERT INTO score VALUES("2014013603","0001",88);
+INSERT INTO score VALUES("2014013604","0001",70);
+
+UPDATE student SET student_id="2014013611" WHERE student_id="2014013601";
+
+DELETE FROM student WHERE student_id="2014013602";

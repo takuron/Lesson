@@ -1,0 +1,112 @@
+BL51 BANKED LINKER/LOCATER V6.22                                                        06/09/2021  15:29:01  PAGE 1
+
+
+BL51 BANKED LINKER/LOCATER V6.22, INVOKED BY:
+D:\KEIL\C51\BIN\BL51.EXE Experiment3.obj TO Experiment3
+
+
+MEMORY MODEL: SMALL
+
+
+INPUT MODULES INCLUDED:
+  Experiment3.obj (EXPERIMENT3)
+  D:\KEIL\C51\LIB\C51S.LIB (?C_STARTUP)
+
+
+LINK MAP OF MODULE:  Experiment3 (EXPERIMENT3)
+
+
+            TYPE    BASE      LENGTH    RELOCATION   SEGMENT NAME
+            -----------------------------------------------------
+
+            * * * * * * *   D A T A   M E M O R Y   * * * * * * *
+            REG     0000H     0008H     ABSOLUTE     "REG BANK 0"
+            DATA    0008H     0004H     UNIT         ?DT?EXPERIMENT3
+            IDATA   000CH     0001H     UNIT         ?STACK
+
+            * * * * * * *   C O D E   M E M O R Y   * * * * * * *
+            CODE    0000H     0003H     ABSOLUTE     
+                    0003H     0008H                  *** GAP ***
+            CODE    000BH     0003H     ABSOLUTE     
+                    000EH     07F2H                  *** GAP ***
+            CODE    0800H     0042H     UNIT         ?PR?LED_CHANGE?EXPERIMENT3
+            CODE    0842H     0022H     UNIT         ?PR?MAIN?EXPERIMENT3
+            CODE    0864H     000CH     UNIT         ?C_C51STARTUP
+
+
+
+OVERLAY MAP OF MODULE:   Experiment3 (EXPERIMENT3)
+
+
+SEGMENT
+  +--> CALLED SEGMENT
+---------------------
+?C_C51STARTUP
+  +--> ?PR?MAIN?EXPERIMENT3
+
+
+
+SYMBOL TABLE OF MODULE:  Experiment3 (EXPERIMENT3)
+
+  VALUE           TYPE          NAME
+  ----------------------------------
+
+  -------         MODULE        EXPERIMENT3
+  C:0000H         SYMBOL        _ICE_DUMMY_
+  D:0090H         PUBLIC        P1
+  D:00B0H         PUBLIC        P3
+  B:00A8H.7       PUBLIC        EA
+  D:00A8H         PUBLIC        IE
+  B:0090H.0       PUBLIC        P1_0
+  D:00B8H         PUBLIC        IP
+BL51 BANKED LINKER/LOCATER V6.22                                                      06/09/2021  15:29:01  PAGE 2
+
+
+  C:0800H         PUBLIC        LED_change
+  C:0842H         PUBLIC        main
+  D:0008H         PUBLIC        time
+  D:0098H         PUBLIC        SCON
+  D:0089H         PUBLIC        TMOD
+  D:0088H         PUBLIC        TCON
+  D:000AH         PUBLIC        led
+  B:00A8H.1       PUBLIC        ET0
+  D:008CH         PUBLIC        TH0
+  D:008AH         PUBLIC        TL0
+  B:0088H.4       PUBLIC        TR0
+  D:00C8H         PUBLIC        T2CON
+  D:00D0H         PUBLIC        PSW
+  -------         PROC          MAIN
+  C:0842H         LINE#         11
+  C:0842H         LINE#         13
+  C:0845H         LINE#         14
+  C:0848H         LINE#         15
+  C:084BH         LINE#         16
+  C:084DH         LINE#         17
+  C:084FH         LINE#         18
+  C:0851H         LINE#         20
+  C:0856H         LINE#         21
+  C:085AH         LINE#         23
+  C:085AH         LINE#         24
+  C:0862H         LINE#         25
+  -------         ENDPROC       MAIN
+  -------         PROC          LED_CHANGE
+  C:0800H         LINE#         30
+  C:0809H         LINE#         31
+  C:080BH         LINE#         33
+  C:0813H         LINE#         34
+  C:081CH         LINE#         35
+  C:082DH         LINE#         36
+  C:0833H         LINE#         37
+  C:0833H         LINE#         39
+  C:0836H         LINE#         40
+  C:0839H         LINE#         41
+  C:083BH         LINE#         42
+  -------         ENDPROC       LED_CHANGE
+  -------         ENDMOD        EXPERIMENT3
+
+******************************************************************************
+* RESTRICTED VERSION WITH 0800H BYTE CODE SIZE LIMIT; USED: 0067H BYTE ( 5%) *
+******************************************************************************
+
+Program Size: data=13.0 xdata=0 code=118
+LINK/LOCATE RUN COMPLETE.  0 WARNING(S),  0 ERROR(S)

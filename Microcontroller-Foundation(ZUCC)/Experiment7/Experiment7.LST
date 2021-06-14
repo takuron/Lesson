@@ -1,0 +1,70 @@
+C51 COMPILER V9.00   EXPERIMENT7                                                           06/09/2021 16:19:03 PAGE 1   
+
+
+C51 COMPILER V9.00, COMPILATION OF MODULE EXPERIMENT7
+OBJECT MODULE PLACED IN Experiment7.OBJ
+COMPILER INVOKED BY: D:\Keil\C51\BIN\C51.EXE Experiment7.c BROWSE DEBUG OBJECTEXTEND
+
+line level    source
+
+   1          #include <reg52.h>
+   2          
+   3          #define uchar unsigned char
+   4          #define uint unsigned int
+   5          
+   6          uchar LEDnumber[] = {0xc0,0xf9,0xa4,0xb0,0x99,0x92,0x82,0xf8,0x80,0x90};
+   7          
+   8          void delay(int n){
+   9   1              int i,j;
+  10   1              for(i = 0; i<110;++i)
+  11   1                      {
+  12   2                              for(j = 0; j<n;++j)
+  13   2                                      {
+  14   3                                      ;
+  15   3                                      }
+  16   2                      }
+  17   1      
+  18   1      }
+  19          
+  20          void main(){
+  21   1              uint number;
+  22   1              P1=0x0f;
+  23   1              while(1){
+  24   2                      P1=0x0f;
+  25   2                      if(P1!=0x0f){
+  26   3                              delay(50);
+  27   3                              if(P1!=0x0f){
+  28   4                                        if(P1==0x0e) number = 1;
+  29   4                                        if(P1==0x0d) number = 2;
+  30   4                                        if(P1==0x0b) number = 3;
+  31   4                                        if(P1==0x07) number = 4;
+  32   4                                        P1 = 0xf0;
+  33   4                                        if(P1!=0xf0){
+  34   5                                              if(P1==0xe0) number = number;
+  35   5                                              if(P1==0xd0) number = number+4;
+  36   5                                              if(P1==0xb0) number = number+8;
+  37   5                                              if(P1==0x70) number = number+12;
+  38   5                                              if(number>=10) number=9;
+  39   5                                        }
+  40   4                              }
+  41   3                      }
+  42   2                      P2 = LEDnumber[number];
+  43   2                      delay(50);
+  44   2              }
+  45   1      }       
+
+
+MODULE INFORMATION:   STATIC OVERLAYABLE
+   CODE SIZE        =    183    ----
+   CONSTANT SIZE    =   ----    ----
+   XDATA SIZE       =   ----    ----
+   PDATA SIZE       =   ----    ----
+   DATA SIZE        =     10    ----
+   IDATA SIZE       =   ----    ----
+   BIT SIZE         =   ----    ----
+C51 COMPILER V9.00   EXPERIMENT7                                                           06/09/2021 16:19:03 PAGE 2   
+
+END OF MODULE INFORMATION.
+
+
+C51 COMPILATION COMPLETE.  0 WARNING(S),  0 ERROR(S)
