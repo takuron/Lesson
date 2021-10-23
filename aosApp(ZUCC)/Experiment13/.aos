@@ -1,0 +1,3 @@
+DEPENDENCIES=bt_common newlib_stub
+USER_ADD_DEPS=
+MD5SUM_HEADER=45de830c7ce8c1a3fcf6f1bca056607c

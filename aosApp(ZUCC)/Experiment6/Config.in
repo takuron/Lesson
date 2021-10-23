@@ -1,0 +1,130 @@
+menu "Application Configuration"
+config AOS_APP_EXPERIMENT6
+    bool "HelloWorld"
+    select AOS_COMP_OSAL_AOS if !AOS_CREATE_PROJECT
+    help
+        Hello World
+
+if AOS_APP_EXPERIMENT6
+# Configurations for app helloworld
+config SYSINFO_APP_VERSION
+    string "Firmware Version"
+    default "app-1.0.0-20200214.140831"
+    help
+        application main firmware version
+endif
+
+config AOS_CREATE_PROJECT
+    bool 
+    default y
+
+config AOS_BUILD_BOARD
+    string
+    default "esp32devkitc"
+
+config AOS_BUILD_APP
+    string
+    default "Experiment6"
+
+config AOS_SDK_PATH
+    string
+    option env="AOS_SDK_PATH"
+
+config USER_APP_PATH
+    string
+    option env="APPDIR"
+endmenu
+
+menu "BSP         Configuration"
+source "$AOS_SDK_PATH/platform/arch/xtensa/lx6/Config.in"
+source "$USER_APP_PATH/board/esp32devkitc/Config.in"
+source "$AOS_SDK_PATH/platform/mcu/esp32/Config.in"
+endmenu
+
+menu "Kernel      Configuration"
+source "$AOS_SDK_PATH/core/init/Config.in"
+source "$AOS_SDK_PATH/core/kv/Config.in"
+source "$AOS_SDK_PATH/core/osal/aos/Config.in"
+source "$AOS_SDK_PATH/core/rbtree/Config.in"
+source "$AOS_SDK_PATH/core/rhino/Config.in"
+source "$AOS_SDK_PATH/core/vfs/Config.in"
+endmenu
+
+menu "Components  Configuration"
+source "$AOS_SDK_PATH/components/dm/ulog/Config.in"
+source "$AOS_SDK_PATH/components/network/Config.in"
+source "$AOS_SDK_PATH/components/network/lwip/Config.in"
+source "$AOS_SDK_PATH/components/network/netmgr/Config.in"
+source "$AOS_SDK_PATH/components/security/mbedtls/Config.in"
+source "$AOS_SDK_PATH/components/utility/yloop/Config.in"
+if ((ULOG_CONFIG_UPLOAD || ULOG_CONFIG_POP_CLOUD) || ((ULOG_CONFIG_UPLOAD || ULOG_CONFIG_POP_CLOUD) && ENABLE_DYNAMIC_REGISTER))
+source "$AOS_SDK_PATH/components/network/netmgr/activation/Config.in"
+endif
+if (((ULOG_CONFIG_UPLOAD || ULOG_CONFIG_POP_CLOUD) && USE_ITLS) || (((ULOG_CONFIG_UPLOAD || ULOG_CONFIG_POP_CLOUD) && ENABLE_DYNAMIC_REGISTER) && USE_ITLS))
+source "$AOS_SDK_PATH/components/security/linksecurity/alicrypto/Config.in"
+endif
+if (((EN_BLE_HOST&&!bt_mesh_standalone_deploy)))
+source "$AOS_SDK_PATH/components/wireless/bluetooth/ble/host/bt_common/Config.in"
+endif
+if (((EN_BLE_HOST&&!bt_mesh_standalone_deploy)))
+source "$AOS_SDK_PATH/components/wireless/bluetooth/ble/host/Config.in"
+endif
+if ((ULOG_CONFIG_UPLOAD || ULOG_CONFIG_POP_CLOUD) || ((ULOG_CONFIG_UPLOAD || ULOG_CONFIG_POP_CLOUD) && ENABLE_DYNAMIC_REGISTER))
+source "$AOS_SDK_PATH/components/network/netmgr/activation/chip_code/Config.in"
+endif
+if ((ULOG_CONFIG_POP_FS) || (ULOG_CONFIG_UPLOAD || ULOG_CONFIG_POP_CLOUD))
+source "$AOS_SDK_PATH/components/utility/cjson/Config.in"
+endif
+if ((ULOG_CONFIG_FS_FATFS_FLASH || ULOG_CONFIG_FS_FATFS_SD))
+source "$AOS_SDK_PATH/components/fs/fatfs/Config.in"
+endif
+if (((ULOG_CONFIG_UPLOAD || ULOG_CONFIG_POP_CLOUD) && USE_ITLS) || (((ULOG_CONFIG_UPLOAD || ULOG_CONFIG_POP_CLOUD) && ENABLE_DYNAMIC_REGISTER) && USE_ITLS))
+source "$AOS_SDK_PATH/components/security/linksecurity/id2/Config.in"
+endif
+if (((ULOG_CONFIG_UPLOAD || ULOG_CONFIG_POP_CLOUD) && USE_ITLS) || (((ULOG_CONFIG_UPLOAD || ULOG_CONFIG_POP_CLOUD) && ENABLE_DYNAMIC_REGISTER) && USE_ITLS))
+source "$AOS_SDK_PATH/components/security/linksecurity/irot/Config.in"
+endif
+if (((ULOG_CONFIG_UPLOAD || ULOG_CONFIG_POP_CLOUD) && USE_ITLS) || (((ULOG_CONFIG_UPLOAD || ULOG_CONFIG_POP_CLOUD) && ENABLE_DYNAMIC_REGISTER) && USE_ITLS))
+source "$AOS_SDK_PATH/components/security/linksecurity/itls/Config.in"
+endif
+if (((ULOG_CONFIG_UPLOAD || ULOG_CONFIG_POP_CLOUD) && SUPPORT_TLS || COAP_DTLS_SUPPORT) || (((ULOG_CONFIG_UPLOAD || ULOG_CONFIG_POP_CLOUD) && ENABLE_DYNAMIC_REGISTER) && SUPPORT_TLS || COAP_DTLS_SUPPORT))
+source "$AOS_SDK_PATH/components/linkkit/certs/Config.in"
+endif
+if (((ULOG_CONFIG_UPLOAD || ULOG_CONFIG_POP_CLOUD) && ENABLE_DYNAMIC_REGISTER))
+source "$AOS_SDK_PATH/components/linkkit/dynamic_register/Config.in"
+endif
+if ((ULOG_CONFIG_UPLOAD || ULOG_CONFIG_POP_CLOUD) || ((ULOG_CONFIG_UPLOAD || ULOG_CONFIG_POP_CLOUD) && ENABLE_DYNAMIC_REGISTER))
+source "$AOS_SDK_PATH/components/linkkit/infra/Config.in"
+endif
+if ((ULOG_CONFIG_UPLOAD || ULOG_CONFIG_POP_CLOUD))
+source "$AOS_SDK_PATH/components/linkkit/mqtt/Config.in"
+endif
+if ((ULOG_CONFIG_UPLOAD || ULOG_CONFIG_POP_CLOUD))
+source "$AOS_SDK_PATH/components/linkkit/dev_sign/Config.in"
+endif
+if ((ULOG_CONFIG_UPLOAD || ULOG_CONFIG_POP_CLOUD) || ((ULOG_CONFIG_UPLOAD || ULOG_CONFIG_POP_CLOUD) && ENABLE_DYNAMIC_REGISTER))
+source "$AOS_SDK_PATH/components/linkkit/wrappers/Config.in"
+endif
+if (((ULOG_CONFIG_UPLOAD || ULOG_CONFIG_POP_CLOUD) && USE_ITLS) || (((ULOG_CONFIG_UPLOAD || ULOG_CONFIG_POP_CLOUD) && ENABLE_DYNAMIC_REGISTER) && USE_ITLS))
+source "$AOS_SDK_PATH/components/security/linksecurity/irot/km/Config.in"
+endif
+if (((ULOG_CONFIG_UPLOAD || ULOG_CONFIG_POP_CLOUD) && USE_ITLS) || (((ULOG_CONFIG_UPLOAD || ULOG_CONFIG_POP_CLOUD) && ENABLE_DYNAMIC_REGISTER) && USE_ITLS))
+source "$AOS_SDK_PATH/components/security/linksecurity/irot/se/Config.in"
+endif
+if (((ULOG_CONFIG_UPLOAD || ULOG_CONFIG_POP_CLOUD) && USE_ITLS) || (((ULOG_CONFIG_UPLOAD || ULOG_CONFIG_POP_CLOUD) && ENABLE_DYNAMIC_REGISTER) && USE_ITLS))
+source "$AOS_SDK_PATH/components/security/linksecurity/irot/tee/Config.in"
+endif
+if (((ULOG_CONFIG_UPLOAD || ULOG_CONFIG_POP_CLOUD) && USE_ITLS) || (((ULOG_CONFIG_UPLOAD || ULOG_CONFIG_POP_CLOUD) && ENABLE_DYNAMIC_REGISTER) && USE_ITLS))
+source "$AOS_SDK_PATH/components/security/linksecurity/ls_hal/Config.in"
+endif
+if (((ULOG_CONFIG_UPLOAD || ULOG_CONFIG_POP_CLOUD) && USE_ITLS) || (((ULOG_CONFIG_UPLOAD || ULOG_CONFIG_POP_CLOUD) && ENABLE_DYNAMIC_REGISTER) && USE_ITLS))
+source "$AOS_SDK_PATH/components/security/linksecurity/ls_osa/Config.in"
+endif
+if ((ULOG_CONFIG_FS_SPIFFS))
+source "$AOS_SDK_PATH/components/fs/spiffs/Config.in"
+endif
+if ((ULOG_CONFIG_UPLOAD || ULOG_CONFIG_POP_CLOUD))
+source "$AOS_SDK_PATH/components/dm/uagent/Config.in"
+endif
+endmenu
+

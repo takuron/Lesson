@@ -1,0 +1,51 @@
+
+                        AOS MEMORY MAP                            
+|=================================================================|
+| MODULE                                   | ROM       | RAM      |
+|=================================================================|
+| arch_xtensa_lx6                          | 3400      | 2088     |
+| board_esp32devkitc                       | 306       | 0        |
+| cli                                      | 6232      | 353      |
+| Experiment13                             | 152       | 0        |
+| kernel_init                              | 674       | 36       |
+| kv                                       | 3580      | 36       |
+| libapp_update                            | 1922      | 72       |
+| libbootloader_support                    | 5189      | 4        |
+| libc                                     | 59187     | 0        |
+| libcoexist                               | 3716      | 1471     |
+| libcontainer                             | 2634      | 0        |
+| libcore                                  | 1197      | 5        |
+| libdriver                                | 10164     | 121      |
+| libesp32                                 | 31527     | 4420     |
+| libgcc                                   | 5211      | 0        |
+| libhal                                   | 547       | 0        |
+| liblog                                   | 871       | 276      |
+| libm                                     | 92        | 0        |
+| libmesh                                  | 55        | 2        |
+| libnet80211                              | 125078    | 9366     |
+| libnewlib                                | 1603      | 424      |
+| libnvs_flash                             | 11812     | 32       |
+| libphy                                   | 34797     | 2194     |
+| libpp                                    | 62884     | 6510     |
+| librtc                                   | 879       | 4        |
+| libsoc                                   | 7030      | 8        |
+| libspi_flash                             | 6321      | 349      |
+| libstdcc\+\+-cache-workaround            | 96        | 4        |
+| libvfs                                   | 3602      | 335      |
+| libwpa                                   | 23289     | 682      |
+| libwpa2                                  | 0         | 1        |
+| libwpa_supplicant                        | 15210     | 0        |
+| libwps                                   | 0         | 1        |
+| lwip                                     | 37094     | 3301     |
+| mbedtls                                  | 3141      | 4        |
+| mcu_esp32                                | 11577     | 651      |
+| netmgr                                   | 221       | 8        |
+| osal_aos                                 | 1242      | 0        |
+| rhino                                    | 13643     | 9976     |
+| ulog                                     | 736       | 51       |
+| vfs                                      | 869       | 1113     |
+| yloop                                    | 1296      | 32       |
+| *fill*                                   | 3768      | 234      |
+|=================================================================|
+| TOTAL (bytes)                            | 502844    | 44164    |
+|=================================================================|
