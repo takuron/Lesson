@@ -33,11 +33,11 @@
   </component>
   <component name="RunManager">
     <configuration name="Experiment3" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
-      <option name="MAIN_CLASS_NAME" value="top.takuron.jcourses.e.Experiment3" />
+      <option name="MAIN_CLASS_NAME" value="top.takuron.jcourses.e3.Experiment3" />
       <module name="Experiment" />
       <extension name="coverage">
         <pattern>
-          <option name="PATTERN" value="top.takuron.jcourses.e.*" />
+          <option name="PATTERN" value="top.takuron.jcourses.e3.*" />
           <option name="ENABLED" value="true" />
         </pattern>
       </extension>
@@ -59,7 +59,7 @@
       <option name="number" value="Default" />
       <option name="presentableId" value="Default" />
       <updated>1647475953457</updated>
-      <workItem from="1647475954546" duration="2139000" />
+      <workItem from="1647475954546" duration="2421000" />
     </task>
     <servers />
   </component>
@@ -70,7 +70,7 @@
     <breakpoint-manager>
       <breakpoints>
         <line-breakpoint enabled="true" type="java-line">
-          <url>file://$PROJECT_DIR$/src/top/takuron/jcourses/e/Experiment3.java</url>
+          <url>file://$PROJECT_DIR$/src/top/takuron/jcourses/e3/Experiment3.java</url>
           <line>29</line>
           <option name="timeStamp" value="1" />
         </line-breakpoint>
