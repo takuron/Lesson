@@ -11,7 +11,7 @@ public class Experiment3 {
 
     public static void main(String[] args) {
         try {
-            FileReader inFile = new FileReader("words.txt");
+            FileReader inFile = new FileReader("res/words.txt");
             BufferedReader bf = new BufferedReader(inFile);
             String lines = bf.readLine();
             wordsMap = new HashMap();
@@ -35,12 +35,13 @@ public class Experiment3 {
             Scanner sc = new Scanner(System.in);
 
             String word = sc.nextLine();
+            String answer = wordsMap.get(word);
             if(word.equals("")) break;
-            else if(wordsMap.get(word)==null){
+            else if(answer==null){
                 System.out.println("非常抱歉，没找到单词"+word);
             }
             else{
-                System.out.println(wordsMap.get(word));
+                System.out.println(answer);
             }
 
         }
