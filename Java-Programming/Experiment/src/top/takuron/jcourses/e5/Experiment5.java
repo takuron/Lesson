@@ -5,22 +5,31 @@ import com.baidu.translate.demo.TransApi;
 
 import java.io.UnsupportedEncodingException;
 import java.net.URLDecoder;
+import java.util.Scanner;
 
 public class Experiment5 {
-    private static final String APP_ID = "20220324001137405";
-    private static final String SECURITY_KEY = "fWY_PHawbHcW7rJRGJ0Q";
 
     public static void main(String[] args) {
-        TransApi api = new TransApi(APP_ID, SECURITY_KEY);
-        String query = "我叫马牛逼，我敢吃屎";
+        System.out.println("=========================");
+        System.out.println("========欢迎进入词典=======");
+        System.out.println("=========================");
 
-        JSONObject result = JSONObject.parseObject(api.getTransResult(query, "auto", "en"));
-        String dst = JSONObject.parseObject(result.getJSONArray("trans_result").get(0).toString()).getString("dst");
+        while (true){
+            System.out.print("请输入需要查询的单词(回车退出）：");
+            Scanner sc = new Scanner(System.in);
 
-        try {
-            System.out.println(URLDecoder.decode(dst,"utf-8"));
-        } catch (UnsupportedEncodingException e) {
-            e.printStackTrace();
+            String word = sc.nextLine();
+            if(word.equals("")) break;
+
+            BaiduDict dict = new BaiduDict();
+            String answer = dict.translate(word);
+            if(answer==null){
+                System.out.println("非常抱歉，没找到单词"+word);
+            }
+            else{
+                System.out.println(answer);
+            }
+
         }
 
     }
