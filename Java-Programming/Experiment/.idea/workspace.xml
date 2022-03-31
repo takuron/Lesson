@@ -36,7 +36,12 @@
     <property name="project.structure.side.proportion" value="0.2" />
     <property name="settings.editor.selected.configurable" value="preferences.lookFeel" />
   </component>
-  <component name="RunManager" selected="Application.Experiment5">
+  <component name="RecentsManager">
+    <key name="CopyClassDialog.RECENTS_KEY">
+      <recent name="top.takuron.jcourses.e6" />
+    </key>
+  </component>
+  <component name="RunManager" selected="Application.Experiment6">
     <configuration name="Experiment3" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
       <option name="MAIN_CLASS_NAME" value="top.takuron.jcourses.e3.Experiment3" />
       <module name="Experiment" />
@@ -63,8 +68,22 @@
         <option name="Make" enabled="true" />
       </method>
     </configuration>
+    <configuration name="Experiment6" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
+      <option name="MAIN_CLASS_NAME" value="top.takuron.jcourses.e6.Experiment6" />
+      <module name="Experiment" />
+      <extension name="coverage">
+        <pattern>
+          <option name="PATTERN" value="top.takuron.jcourses.e6.*" />
+          <option name="ENABLED" value="true" />
+        </pattern>
+      </extension>
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
     <recent_temporary>
       <list>
+        <item itemvalue="Application.Experiment6" />
         <item itemvalue="Application.Experiment5" />
         <item itemvalue="Application.Experiment3" />
       </list>
@@ -80,7 +99,7 @@
       <updated>1647475953457</updated>
       <workItem from="1647475954546" duration="3249000" />
       <workItem from="1648081599559" duration="3907000" />
-      <workItem from="1648685132804" duration="452000" />
+      <workItem from="1648685132804" duration="3652000" />
     </task>
     <servers />
   </component>

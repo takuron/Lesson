@@ -1,8 +1,8 @@
-package top.takuron.jcourses.e5;
+package top.takuron.jcourses.e6;
 
 import java.util.Scanner;
 
-public class Experiment5 {
+public class Experiment6 {
 
     public static void main(String[] args) {
         System.out.println("=========================");
@@ -16,7 +16,10 @@ public class Experiment5 {
             String word = sc.nextLine();
             if(word.equals("")) break;
 
-            BaiduDict dict = new BaiduDict();
+            IDict dict = new AutoDict();//这里可以是任意IDict子类，程序均可正常运行
+            if(dict.init()!=0) System.out.println("初始化错误");
+
+
             String answer = dict.translate(word);
             if(answer==null){
                 System.out.println("非常抱歉，没找到单词"+word);
