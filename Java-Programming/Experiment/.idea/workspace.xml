@@ -2,6 +2,11 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="5f4d345f-d3c8-4153-9520-b79a51a68227" name="Changes" comment="">
+      <change afterPath="$PROJECT_DIR$/.idea/uiDesigner.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/top/takuron/jcourses/e7/TranslateF.form" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/top/takuron/jcourses/e7/TranslateF.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../IoT-Sensor-Technology/Key/main_example.py" beforeDir="false" afterPath="$PROJECT_DIR$/../../IoT-Sensor-Technology/Key/main_example.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../IoT-Sensor-Technology/Timer/main_example.py" beforeDir="false" afterPath="$PROJECT_DIR$/../../IoT-Sensor-Technology/Timer/main_example.py" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
@@ -30,6 +35,9 @@
   </component>
   <component name="PropertiesComponent"><![CDATA[{
   "keyToString": {
+    "SHARE_PROJECT_CONFIGURATION_FILES": "true",
+    "UI_DESIGNER_EDITOR_MODE.PaletteManager.WIDTH": "130",
+    "UI_DESIGNER_EDITOR_MODE.UIDesignerToolWindowManager.WIDTH": "249",
     "WebServerToolWindowFactoryState": "false"
   }
 }]]></component>
@@ -38,7 +46,7 @@
       <recent name="top.takuron.jcourses.e6" />
     </key>
   </component>
-  <component name="RunManager" selected="Application.Experiment6">
+  <component name="RunManager" selected="Application.Experiment7">
     <configuration name="Experiment3" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
       <option name="MAIN_CLASS_NAME" value="top.takuron.jcourses.e3.Experiment3" />
       <module name="Experiment" />
@@ -78,8 +86,28 @@
         <option name="Make" enabled="true" />
       </method>
     </configuration>
+    <configuration name="Experiment7" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
+      <option name="MAIN_CLASS_NAME" value="top.takuron.jcourses.e7.Experiment7" />
+      <module name="Experiment" />
+      <extension name="coverage">
+        <pattern>
+          <option name="PATTERN" value="top.takuron.jcourses.e7.*" />
+          <option name="ENABLED" value="true" />
+        </pattern>
+      </extension>
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <list>
+      <item itemvalue="Application.Experiment3" />
+      <item itemvalue="Application.Experiment5" />
+      <item itemvalue="Application.Experiment6" />
+      <item itemvalue="Application.Experiment7" />
+    </list>
     <recent_temporary>
       <list>
+        <item itemvalue="Application.Experiment7" />
         <item itemvalue="Application.Experiment6" />
         <item itemvalue="Application.Experiment5" />
         <item itemvalue="Application.Experiment3" />
@@ -101,11 +129,23 @@
       <workItem from="1649895335744" duration="734000" />
       <workItem from="1649898766691" duration="169000" />
       <workItem from="1649899038801" duration="713000" />
+      <workItem from="1650523289828" duration="5863000" />
     </task>
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
     <option name="version" value="3" />
+  </component>
+  <component name="Vcs.Log.Tabs.Properties">
+    <option name="TAB_STATES">
+      <map>
+        <entry key="MAIN">
+          <value>
+            <State />
+          </value>
+        </entry>
+      </map>
+    </option>
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>

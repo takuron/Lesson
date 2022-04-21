@@ -35,10 +35,9 @@ def change_LED() :
             led.off()
 
 
-while True:
+def onClick(KEY):
+    time.sleep_ms(10)
     if Key1.value() is 0:
-        time.sleep_ms(10)
-        if Key1.value() is 0:
-            change_LED()
-        time.sleep_ms(500)
+        change_LED()
 
+Key1.irq(onClick,Pin.IRQ_FALLING)
