@@ -1,0 +1,34 @@
+<?xml version='1.0' encoding='utf-8'?>
+<!DOCTYPE hibernate-configuration PUBLIC
+    "-//Hibernate/Hibernate Configuration DTD//EN"
+    "http://www.hibernate.org/dtd/hibernate-configuration-3.0.dtd">
+<hibernate-configuration>
+  <session-factory>
+    <property name="connection.url"/>
+    <property name="connection.driver_class"/>
+    <!-- 1. 数据库连接配置 -->
+    <property name="hibernate.connection.driver_class">com.mysql.cj.jdbc.Driver</property>
+    <property name="hibernate.connection.url">jdbc:mysql://us-server.passer.bid:10010/petstore?serverTimezone=UTC&amp;useUnicode=true&amp;characterEncoding=utf-8&amp;useSSL=false</property>
+    <property name="hibernate.connection.username">root</property>
+    <property name="hibernate.connection.password">60UWJ2gtzG</property>
+
+
+    <!-- DB schema will be updated if needed -->
+    <!-- <property name="hibernate.hbm2ddl.auto">update</property> -->
+
+    <!-- 2. 其他相关配置 -->
+    <!-- 2.1 显示hibernate在运行时候执行的sql语句 -->
+    <property name="hibernate.show_sql">true</property>
+    <!-- 2.2 格式化sql -->
+    <property name="hibernate.format_sql">true</property>
+
+    <!--<property name="hbm2ddl.auto">update</property>-->
+
+
+
+    <mapping resource="top/takuron/jstudy/petstore/model/UserModel.hbm.xml" />
+    <mapping resource="top/takuron/jstudy/petstore/model/ProductModel.hbm.xml" />
+    <mapping resource="top/takuron/jstudy/petstore/model/OrderModel.hbm.xml" />
+    <mapping resource="top/takuron/jstudy/petstore/model/OrderDetailModel.hbm.xml" />
+  </session-factory>
+</hibernate-configuration>

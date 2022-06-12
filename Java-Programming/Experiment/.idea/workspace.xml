@@ -1,14 +1,8 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="5f4d345f-d3c8-4153-9520-b79a51a68227" name="Changes" comment="">
-      <change afterPath="$PROJECT_DIR$/.idea/libraries/squareup_okhttp3_okhttp.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/top/takuron/jcourses/e8/DingtalkUtils.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/top/takuron/jcourses/e8/E8gui.form" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/top/takuron/jcourses/e8/E8gui.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/top/takuron/jcourses/e8/OkhttpUtils.java" afterDir="false" />
+    <list default="true" id="5f4d345f-d3c8-4153-9520-b79a51a68227" name="Changes" comment="Changes">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Experiment.iml" beforeDir="false" afterPath="$PROJECT_DIR$/Experiment.iml" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -55,7 +49,7 @@
       <recent name="top.takuron.jcourses.e6" />
     </key>
   </component>
-  <component name="RunManager" selected="Application.Experiment8">
+  <component name="RunManager" selected="JAR 应用程序.okhttp-3.3.0.jar">
     <configuration name="Experiment5" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
       <option name="MAIN_CLASS_NAME" value="top.takuron.jcourses.e5.Experiment5" />
       <module name="Experiment" />
@@ -113,21 +107,12 @@
       <method v="2" />
     </configuration>
     <list>
-      <item itemvalue="Application.Experiment8" />
-      <item itemvalue="Application.Experiment5" />
-      <item itemvalue="Application.Experiment6" />
-      <item itemvalue="Application.Experiment7" />
-      <item itemvalue="JAR Application.okhttp-3.3.0.jar" />
+      <item itemvalue="JAR 应用程序.okhttp-3.3.0.jar" />
+      <item itemvalue="应用程序.Experiment5" />
+      <item itemvalue="应用程序.Experiment6" />
+      <item itemvalue="应用程序.Experiment7" />
+      <item itemvalue="应用程序.Experiment8" />
     </list>
-    <recent_temporary>
-      <list>
-        <item itemvalue="Application.Experiment8" />
-        <item itemvalue="JAR Application.okhttp-3.3.0.jar" />
-        <item itemvalue="Application.Experiment7" />
-        <item itemvalue="Application.Experiment6" />
-        <item itemvalue="Application.Experiment5" />
-      </list>
-    </recent_temporary>
   </component>
   <component name="SpellCheckerSettings" RuntimeDictionaries="0" Folders="0" CustomDictionaries="0" DefaultDictionary="application-level" UseSingleDictionary="true" transferred="true" />
   <component name="TaskManager">
@@ -149,7 +134,10 @@
       <workItem from="1651712398644" duration="1371000" />
       <workItem from="1652315553884" duration="2659000" />
       <workItem from="1652918895919" duration="4582000" />
-      <workItem from="1653187805543" duration="4990000" />
+      <workItem from="1653187805543" duration="5187000" />
+      <workItem from="1653207256999" duration="2007000" />
+      <workItem from="1653979227239" duration="47000" />
+      <workItem from="1653979290956" duration="123000" />
     </task>
     <servers />
   </component>
